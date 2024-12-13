@@ -252,7 +252,7 @@
 
     <enum name="transfer_function">
       <description summary="named transfer functions">
-        Named transfer functions used to encode well-known transfer
+        Named transfer functions used to represent well-known transfer
         characteristics. H.273 is the authority, when it comes to the exact
         formulas and authoritative specifications, where an equivalent code
         point exists.
@@ -262,11 +262,14 @@
         Descriptions do list the specifications for convenience.
       </description>
 
-      <entry name="bt709" value="1">
-        <description summary="BT.709 transfer function">
-          Transfer characteristics as defined by
+      <entry name="bt1886" value="1">
+        <description summary="BT.1886 display transfer characteristic">
+          Rec. ITU-R BT.1886 is the display transfer characteristic assumed by
+          - Rec. ITU-R BT.601-7 525 and 625
           - Rec. ITU-R BT.709-6
-          Equivalent to H.273 TransferCharacteristics code point 1, 6, 14, 15.
+          - Rec. ITU-R BT.2020-2
+          These recommendations are referred to by H.273 TransferCharacteristics
+          code points 1, 6, 14, and 15, which are all equivalent.
         </description>
       </entry>
       <entry name="gamma22" value="2">
