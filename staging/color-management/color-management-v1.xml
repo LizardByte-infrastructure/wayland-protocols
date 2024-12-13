@@ -266,7 +266,6 @@
         <description summary="BT.709 transfer function">
           Transfer characteristics as defined by
           - Rec. ITU-R BT.709-6
-          - Rec. ITU-R BT.1361-0 conventional colour gamut system (historical)
           Equivalent to H.273 TransferCharacteristics code point 1, 6, 14, 15.
         </description>
       </entry>
@@ -324,14 +323,7 @@
           Equivalent to H.273 TransferCharacteristics code point 11.
         </description>
       </entry>
-      <entry name="bt1361" value="9">
-        <description summary="BT.1361 extended transfer function">
-          Transfer characteristics as defined by
-          - Rec. ITU-R BT.1361-0 extended colour gamut system (historical)
-          Equivalent to H.273 TransferCharacteristics code point 12.
-        </description>
-      </entry>
-      <entry name="srgb" value="10">
+      <entry name="srgb" value="9">
         <description summary="sRGB piece-wise transfer function">
           Transfer characteristics as defined by
           - IEC 61966-2-1 sRGB
@@ -339,7 +331,7 @@
           MatrixCoefficients set to 0.
         </description>
       </entry>
-      <entry name="ext_srgb" value="11">
+      <entry name="ext_srgb" value="10">
         <description summary="Extended sRGB piece-wise transfer function">
           Transfer characteristics as defined by
           - IEC 61966-2-1 sYCC
@@ -347,7 +339,7 @@
           MatrixCoefficients set to anything but 0.
         </description>
       </entry>
-      <entry name="st2084_pq" value="12">
+      <entry name="st2084_pq" value="11">
         <description summary="perceptual quantizer transfer function">
           Transfer characteristics as defined by
           - SMPTE ST 2084 (2014) for 10-, 12-, 14- and 16-bit systems
@@ -365,14 +357,14 @@
           Report ITU-R BT.2408-7 and is not part of ST 2084 or BT.2100.
         </description>
       </entry>
-      <entry name="st428" value="13">
+      <entry name="st428" value="12">
         <description summary="SMPTE ST 428 transfer function">
           Transfer characteristics as defined by
           - SMPTE ST 428-1 (2019)
           Equivalent to H.273 TransferCharacteristics code point 17.
         </description>
       </entry>
-      <entry name="hlg" value="14">
+      <entry name="hlg" value="13">
         <description summary="hybrid log-gamma transfer function">
           Transfer characteristics as defined by
           - ARIB STD-B67 (2015)
