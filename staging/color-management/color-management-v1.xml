@@ -271,6 +271,11 @@
           - Rec. ITU-R BT.2020-2
           These recommendations are referred to by H.273 TransferCharacteristics
           code points 1, 6, 14, and 15, which are all equivalent.
+
+          This TF implies these default luminances from Rec. ITU-R BT.2035:
+          - primary color volume minimum: 0.01 cd/m²
+          - primary color volume maximum: 100 cd/m²
+          - reference white: 100 cd/m²
         </description>
       </entry>
       <entry name="gamma22" value="2">
