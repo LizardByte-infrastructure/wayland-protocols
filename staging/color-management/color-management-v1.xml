@@ -705,7 +705,7 @@
         By default, a surface does not have an associated image description
         nor a rendering intent. The handling of color on such surfaces is
         compositor implementation defined. Compositors should handle such
-        surfaces as sRGB but may handle them differently if they have specific
+        surfaces as sRGB, but may handle them differently if they have specific
         requirements.
 
         Setting the image description has copy semantics; after this request,
@@ -767,7 +767,7 @@
 
         The preferred image description is not automatically used for anything.
         It is only a hint, and clients may set any valid image description with
-        set_image_description but there might be performance and color accuracy
+        set_image_description, but there might be performance and color accuracy
         improvements by providing the wl_surface contents in the preferred
         image description. Therefore clients that can, should render according
         to the preferred image description
@@ -904,7 +904,7 @@
         The data must represent a valid ICC profile. The ICC profile version
         must be 2 or 4, it must be a 3 channel profile and the class must be
         Display or ColorSpace. Violating these requirements will not result in a
-        protocol error but will eventually send the
+        protocol error, but will eventually send the
         wp_image_description_v1.failed event on the created
         wp_image_description_v1 with the 'unsupported' cause.
 
@@ -939,7 +939,7 @@
       - mastering display primaries and white point (target color volume)
       - mastering luminance range
 
-      The following proprties are optional and will be ignored
+      The following properties are optional and will be ignored
       if not explicitly set:
       - maximum content light level
       - maximum frame-average light level
