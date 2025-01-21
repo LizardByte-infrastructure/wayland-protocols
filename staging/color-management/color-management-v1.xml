@@ -121,9 +121,9 @@
       <description summary="compositor supported features"/>
 
       <entry name="icc_v2_v4" value="0"
-             summary="new_icc_creator request"/>
+             summary="create_icc_creator request"/>
       <entry name="parametric" value="1"
-             summary="new_parametric_creator request"/>
+             summary="create_parametric_creator request"/>
       <entry name="set_primaries" value="2"
              summary="parametric set_primaries request"/>
       <entry name="set_tf_power" value="3"
@@ -437,7 +437,7 @@
       <arg name="surface" type="object" interface="wl_surface"/>
     </request>
 
-    <request name="new_icc_creator">
+    <request name="create_icc_creator">
       <description summary="make a new ICC-based image description creator object">
         Makes a new ICC-based image description creator object with all
         properties initially unset. The client can then use the object's
@@ -454,7 +454,7 @@
            summary="the new creator object"/>
     </request>
 
-    <request name="new_parametric_creator">
+    <request name="create_parametric_creator">
       <description summary="make a new parametric image description creator object">
         Makes a new parametric image description creator object with all
         properties initially unset. The client can then use the object's
@@ -471,7 +471,7 @@
            summary="the new creator object"/>
     </request>
 
-    <request name="get_windows_scrgb">
+    <request name="create_windows_scrgb">
       <description summary="create Windows-scRGB image description object">
         This creates a pre-defined image description for the so-called
         Windows-scRGB stimulus encoding. This comes from the Windows 10 handling
