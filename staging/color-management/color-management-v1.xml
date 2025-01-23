@@ -418,17 +418,17 @@
       <arg name="surface" type="object" interface="wl_surface"/>
     </request>
 
-    <request name="get_feedback_surface">
+    <request name="get_surface_feedback">
       <description summary="create a color management feedback interface">
-        This creates a new color wp_color_management_feedback_surface_v1 object
+        This creates a new color wp_color_management_surface_feedback_v1 object
         for the given wl_surface.
 
-        See the wp_color_management_feedback_surface_v1 interface for more
+        See the wp_color_management_surface_feedback_v1 interface for more
         details.
       </description>
 
       <arg name="id" type="new_id"
-           interface="wp_color_management_feedback_surface_v1"/>
+           interface="wp_color_management_surface_feedback_v1"/>
       <arg name="surface" type="object" interface="wl_surface"/>
     </request>
 
@@ -727,18 +727,18 @@
     </request>
   </interface>
 
-  <interface name="wp_color_management_feedback_surface_v1" version="1">
+  <interface name="wp_color_management_surface_feedback_v1" version="1">
     <description summary="color management extension to a surface">
-        A wp_color_management_feedback_surface_v1 allows the client to get the
+        A wp_color_management_surface_feedback_v1 allows the client to get the
         preferred image description of a surface.
 
         If the wl_surface associated with this object is destroyed, the
-        wp_color_management_feedback_surface_v1 object becomes inert.
+        wp_color_management_surface_feedback_v1 object becomes inert.
     </description>
 
     <request name="destroy" type="destructor">
       <description summary="destroy the color management interface for a surface">
-        Destroy the wp_color_management_feedback_surface_v1 object.
+        Destroy the wp_color_management_surface_feedback_v1 object.
       </description>
     </request>
 
@@ -786,7 +786,7 @@
         stop using and destroy the image descriptions created by earlier
         invocations of this request for the associated wl_surface.
         This request is usually sent as a reaction to the preferred_changed
-        event or when creating a wp_color_management_feedback_surface_v1 object
+        event or when creating a wp_color_management_surface_feedback_v1 object
         if the client is capable of adapting to image descriptions.
 
         The created wp_image_description_v1 object preserves the preferred image
