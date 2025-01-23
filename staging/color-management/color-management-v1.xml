@@ -1403,6 +1403,20 @@
       Sends all matching events describing an image description object exactly
       once and finally sends the 'done' event.
 
+      This means
+      - if the image description is parametric, it must send
+        - primaries
+        - named_primaries, if applicable
+        - at least one of tf_power and tf_named, as applicable
+        - luminances
+        - target_primaries
+        - target_luminance
+      - if the image description is parametric, it may send, if applicable,
+        - target_max_cll
+        - target_max_fall
+      - if the image description contains an ICC profile, it must send the
+        icc_file event
+
       Once a wp_image_description_info_v1 object has delivered a 'done' event it
       is automatically destroyed.
 
