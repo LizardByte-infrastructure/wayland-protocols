@@ -873,7 +873,7 @@
         description.
 
         The data shall be found through the given fd at the given offset, having
-        the given length. The fd must seekable and readable. Violating these
+        the given length. The fd must be seekable and readable. Violating these
         requirements raises the bad_fd protocol error.
 
         If reading the data fails due to an error independent of the client, the
