@@ -797,6 +797,12 @@
 
         The resulting image description object allows get_information request.
 
+        If the image description is parametric, the client should set it on its
+        wl_surface only if the image description is an exact match with the
+        client content. Particularly if everything else matches, but the target
+        color volume is greater than what the client needs, the client should
+        create its own parameric image description with its exact parameters.
+
         If the interface version is inadequate for the preferred image
         description, meaning that the client does not support all the
         events needed to deliver the crucial information, the resulting image
