@@ -746,6 +746,8 @@
       <description summary="protocol errors"/>
       <entry name="inert" value="0"
              summary="forbidden request on inert object"/>
+      <entry name="unsupported_feature" value="1"
+             summary="attempted to use an unsupported feature"/>
     </enum>
 
     <event name="preferred_changed">
@@ -800,6 +802,20 @@
         description object shall immediately deliver the
         wp_image_description_v1.failed event with the low_version cause,
         otherwise the object shall immediately deliver the ready event.
+      </description>
+
+      <arg name="image_description"
+           type="new_id" interface="wp_image_description_v1"/>
+    </request>
+
+    <request name="get_preferred_parametric">
+      <description summary="get the preferred image description">
+        The same description as for get_preferred applies, except the returned
+        image description is guaranteed to be parametric. This is meant for
+        clients that can only deal with parametric image descriptions.
+
+        If the compositor doesn't support parametric image descriptions, the
+        unsupported_feature error is emitted.
       </description>
 
       <arg name="image_description"
