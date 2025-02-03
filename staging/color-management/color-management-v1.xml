@@ -350,12 +350,13 @@
           Equivalent to H.273 TransferCharacteristics code point 16.
 
           This TF implies these default luminances
-          - primary color volume minimum: 0 cd/m²
+          - primary color volume minimum: 0.005 cd/m²
           - primary color volume maximum: 10000 cd/m²
           - reference white: 203 cd/m²
 
-          The primary color volume minimum and maximum cannot be changed,
-          they are defined by ST 2084 and BT.2100. The default value for the
+          The difference between the primary color volume minimum and maximum
+          must be approximately 10000 cd/m² as that is the swing of the EOTF
+          defined by ST 2084 and BT.2100. The default value for the
           reference white is a protocol addition: it is suggested by
           Report ITU-R BT.2408-7 and is not part of ST 2084 or BT.2100.
         </description>
@@ -1127,8 +1128,9 @@
         Setting a named transfer characteristic can imply other default
         luminances.
 
-        The default luminances get overwritten when this request is used, except
-        with transfer_function.st2084_pq 'min_lum' and 'max_lum' are ignored.
+        The default luminances get overwritten when this request is used.
+        With transfer_function.st2084_pq the given 'max_lum' value is ignored,
+        and 'max_lum' is taken as 'min_lum' + 10000 cd/m².
 
         'min_lum' and 'max_lum' specify the minimum and maximum luminances of
         the primary color volume as reproduced by the targeted display.
