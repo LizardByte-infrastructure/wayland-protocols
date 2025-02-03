@@ -1115,7 +1115,9 @@
     <request name="set_luminances">
       <description summary="primary color volume luminance range and reference white">
         Sets the primary color volume luminance range and the reference white
-        luminance level.
+        luminance level. These values include the minimum display emission
+        and ambient flare luminances, assumed to be optically additive and have
+        the chromaticity of the primary color volume white point.
 
         The default luminances are
         - primary color volume minimum: 0.2 cd/m²
@@ -1232,7 +1234,10 @@
     <request name="set_mastering_luminance">
       <description summary="display mastering luminance range">
         Sets the luminance range that was used during the content mastering
-        process as the minimum and maximum absolute luminance L. This is
+        process as the minimum and maximum absolute luminance L. These values
+        include the minimum display emission and ambient flare luminances,
+        assumed to be optically additive and have the chromaticity of the
+        primary color volume white point. This should be
         compatible with the SMPTE ST 2086 definition of HDR static metadata.
 
         The mastering display primaries and mastering display luminances define
@@ -1519,7 +1524,9 @@
     <event name="luminances">
       <description summary="primary color volume luminance range and reference white">
         Delivers the primary color volume luminance range and the reference
-        white luminance level.
+        white luminance level. These values include the minimum display emission
+        and ambient flare luminances, assumed to be optically additive and have
+        the chromaticity of the primary color volume white point.
 
         The minimum luminance is multiplied by 10000 to get the argument
         'min_lum' value and carries precision of 4 decimals. The maximum
@@ -1562,8 +1569,11 @@
     <event name="target_luminance">
       <description summary="target luminance range">
         Provides the luminance range that the image description is targeting as
-        the minimum and maximum absolute luminance L. This is compatible with
-        the SMPTE ST 2086 definition of HDR static metadata.
+        the minimum and maximum absolute luminance L. These values include the
+        minimum display emission and ambient flare luminances, assumed to be
+        optically additive and have the chromaticity of the primary color
+        volume white point. This should be compatible with the SMPTE ST 2086
+        definition of HDR static metadata.
 
         This luminance range is only theoretical and may not correspond to the
         luminance of light emitted on an actual display.
