@@ -1120,7 +1120,8 @@
         and ambient flare luminances, assumed to be optically additive and have
         the chromaticity of the primary color volume white point.
 
-        The default luminances are
+        The default luminances from
+        https://www.color.org/chardata/rgb/srgb.xalter are
         - primary color volume minimum: 0.2 cd/m²
         - primary color volume maximum: 80 cd/m²
         - reference white: 80 cd/m²
