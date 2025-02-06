@@ -73,11 +73,13 @@
 
   <interface name="wp_color_manager_v1" version="1">
     <description summary="color manager singleton">
-      A global interface used for getting color management extensions for
-      wl_surface and wl_output objects, and for creating client defined image
-      description objects. The extension interfaces allow
+      A singleton global interface used for getting color management extensions
+      for wl_surface and wl_output objects, and for creating client defined
+      image description objects. The extension interfaces allow
       getting the image description of outputs and setting the image
       description of surfaces.
+
+      Compositors should never remove this global.
     </description>
 
     <request name="destroy" type="destructor">
