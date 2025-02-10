@@ -678,13 +678,12 @@
         description. Compositors might convert images to match their own or any
         other image descriptions.
 
-        Image description whose creation gracefully failed (received
-        wp_image_description_v1.failed) are forbidden in this request, and in
-        such case the protocol error image_description is raised.
+        Image descriptions which are not ready (see wp_image_description_v1)
+        are forbidden in this request, and in such case the protocol error
+        image_description is raised.
 
-        All image descriptions whose creation succeeded (received
-        wp_image_description_v1.ready) are allowed and must always be accepted
-        by the compositor.
+        All image descriptions which are ready (see wp_image_description_v1)
+        are allowed and must always be accepted by the compositor.
 
         A rendering intent provides the client's preference on how content
         colors should be mapped to each output. The render_intent value must
