@@ -124,6 +124,14 @@
              summary="ICC-absolute colorimetric"/>
       <entry name="relative_bpc" value="4"
              summary="media-relative colorimetric + black point compensation"/>
+      <entry name="absolute_no_adaptation" value="5" since="2">
+        <description summary="ICC-absolute colorimetric without adaptation">
+          This rendering intent is a modified absolute rendering intent that
+          assumes the viewer is not adapted to the display white point, so no
+          chromatic adaptation between surface and display is done.
+          This can be useful for color proofing applications.
+        </description>
+      </entry>
     </enum>
 
     <enum name="feature">
