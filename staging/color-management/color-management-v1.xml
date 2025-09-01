@@ -520,6 +520,9 @@
       <description summary="supported rendering intent">
         When this object is created, it shall immediately send this event once
         for each rendering intent the compositor supports.
+
+        A compositor must not advertise intents that are deprecated in the
+        bound version of the interface.
       </description>
 
       <arg name="render_intent" type="uint" enum="render_intent"
@@ -530,6 +533,9 @@
       <description summary="supported features">
         When this object is created, it shall immediately send this event once
         for each compositor supported feature listed in the enumeration.
+
+        A compositor must not advertise features that are deprecated in the
+        bound version of the interface.
       </description>
 
       <arg name="feature" type="uint" enum="feature"
@@ -541,6 +547,9 @@
         When this object is created, it shall immediately send this event once
         for each named transfer function the compositor supports with the
         parametric image description creator.
+
+        A compositor must not advertise transfer functions that are deprecated
+        in the bound version of the interface.
       </description>
 
       <arg name="tf" type="uint" enum="transfer_function"
@@ -552,6 +561,9 @@
         When this object is created, it shall immediately send this event once
         for each named set of primaries the compositor supports with the
         parametric image description creator.
+
+        A compositor must not advertise names that are deprecated in the
+        bound version of the interface.
       </description>
 
       <arg name="primaries" type="uint" enum="primaries"
