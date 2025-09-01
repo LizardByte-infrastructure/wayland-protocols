@@ -959,6 +959,10 @@
       Once all properties have been set, the create request must be used to
       create the image description object, destroying the creator in the
       process.
+
+      A viewer, who is viewing the display defined by the resulting image
+      description (the viewing environment included), is assumed to be fully
+      adapted to the primary color volume's white point.
     </description>
 
     <enum name="error">
