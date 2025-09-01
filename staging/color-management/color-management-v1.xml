@@ -288,8 +288,7 @@
           - United States Federal Communications Commission (2003) Title 47 Code
             of Federal Regulations 73.682 (a) (20)
           - Rec. ITU-R BT.1700-0 625 PAL and 625 SECAM
-
-          Note: an sRGB display (IEC 61966-2-1) uses this transfer function.
+          - IEC 61966-2-1 (reference display)
         </description>
       </entry>
       <entry name="gamma28" value="3">
@@ -326,18 +325,18 @@
           - IEC 61966-2-4
         </description>
       </entry>
-      <entry name="srgb" value="9">
-        <description summary="sRGB piece-wise transfer function">
+      <entry name="srgb" value="9" deprecated-since="2">
+        <description summary="Deprecated (ambiguous sRGB transfer function)">
           Transfer characteristics as defined by
           - IEC 61966-2-1 sRGB
 
-          Note: This is not appropriate for describing sRGB material.
-          sRGB material is intended to be viewed on an sRGB display, and
-          that is described by gamma22.
+          As a rule of thumb, use gamma22 for video, motion picture and
+          computer graphics, or compound_power_2_4 for ICC calibrated print
+          workflows.
         </description>
       </entry>
-      <entry name="ext_srgb" value="10">
-        <description summary="Extended sRGB piece-wise transfer function">
+      <entry name="ext_srgb" value="10" deprecated-since="2">
+        <description summary="Deprecated (Extended sRGB piece-wise transfer function)">
           Transfer characteristics as defined by
           - IEC 61966-2-1 sYCC
         </description>
@@ -385,6 +384,12 @@
           The default value for the reference white is a protocol addition:
           it is suggested by Report ITU-R BT.2408-7 and is not part of
           ARIB STD-B67 or BT.2100.
+        </description>
+      </entry>
+      <entry name="compound_power_2_4" value="14" since="2">
+        <description summary="IEC 61966-2-1 encoding function">
+          Encoding characteristics as defined by IEC 61966-2-1, for displays
+          that invert the encoding function.
         </description>
       </entry>
     </enum>
