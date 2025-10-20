@@ -674,17 +674,17 @@
         All image descriptions which are ready (see wp_image_description_v1)
         are allowed and must always be accepted by the compositor.
 
-        A rendering intent provides the client's preference on how content
-        colors should be mapped to each output. The render_intent value must
-        be one advertised by the compositor with
+        When an image description is set on a surface, it establishes an
+        explicit link between surface pixel values and surface colorimetry.
+        This link may be undefined for some pixel values, see the image
+        description creator interfaces for the conditions. Non-finite
+        floating-point values (NaN, Inf) always have an undefined colorimetry.
+
+        A rendering intent provides the client's preference on how surface
+        colorimetry should be mapped to each output. The render_intent value
+        must be one advertised by the compositor with
         wp_color_manager_v1.render_intent event, otherwise the protocol error
         render_intent is raised.
-
-        When an image description is set on a surface, the Transfer
-        Characteristics of the image description defines the valid range of
-        the nominal (real-valued) color channel values. The processing of
-        out-of-range color channel values is undefined, but compositors are
-        recommended to clamp the values to the valid range when possible.
 
         By default, a surface does not have an associated image description
         nor a rendering intent. The handling of color on such surfaces is
@@ -834,6 +834,10 @@
       Once all properties have been set, the create request must be used to
       create the image description object, destroying the creator in the
       process.
+
+      The link between a pixel value (a device value in ICC) and its respective
+      colorimetry is defined by the details of the particular ICC profile.
+      Those details also determine when colorimetry becomes undefined.
     </description>
 
     <enum name="error">
@@ -963,6 +967,13 @@
       A viewer, who is viewing the display defined by the resulting image
       description (the viewing environment included), is assumed to be fully
       adapted to the primary color volume's white point.
+
+      Any of the following conditions will cause the colorimetry of a pixel
+      to become undefined:
+      - Values outside of the defined range of the transfer characteristic.
+      - Tristimulus that exceeds the target color volume.
+      - If extended_target_volume is not supported: tristimulus that exceeds
+      the primary color volume.
 
       The closest correspondence to an image description created through this
       interface is the Display class of profiles in ICC.
