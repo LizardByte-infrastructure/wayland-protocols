@@ -9,11 +9,14 @@ wayland_protocols_version = meson.project_version()
 fs = import('fs')
 
 dep_scanner = dependency('wayland-scanner',
-    version: get_option('tests') ? '>=1.25.0' : '>=1.20.0',
+    version: get_option('tests') ? '>=1.25.0' : '>=1.22.90',
+    required: get_option('tests'),
     native: true,
     fallback: 'wayland'
 )
-prog_scanner = find_program(dep_scanner.get_variable(pkgconfig: 'wayland_scanner', internal: 'wayland_scanner'))
+if dep_scanner.found()
+	prog_scanner = find_program(dep_scanner.get_variable(pkgconfig: 'wayland_scanner', internal: 'wayland_scanner'))
+endif
 
 stable_protocols = {
 	'linux-dmabuf': {'v1': []},
@@ -175,7 +178,7 @@ endforeach
 
 include_dirs = []
 headers = []
-if dep_scanner.version().version_compare('>=1.22.90')
+if dep_scanner.found()
 	subdir('include/wayland-protocols')
 	include_dirs = ['include']
 endif
