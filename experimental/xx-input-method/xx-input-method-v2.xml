@@ -346,7 +346,7 @@
     </event>
 
     <request name="destroy" type="destructor">
-      <description summary="destroy the text input">
+      <description summary="destroy the input method">
         Destroys the xx_input_method_v1 object and any associated child
         objects.
       </description>
@@ -407,7 +407,7 @@
     </description>
 
     <enum name="error">
-      <entry name="invalid_serial" value="0" summary="received acknowledgement for a serial has already been acknowledged or has never been issued"/>
+      <entry name="invalid_serial" value="0" summary="received acknowledgement for a serial which has already been acknowledged or has never been issued"/>
     </enum>
     
     <event name="start_configure">
