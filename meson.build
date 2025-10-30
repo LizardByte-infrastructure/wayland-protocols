@@ -80,6 +80,7 @@ staging_protocols = {
 experimental_protocols = {
 	'xx-input-method': ['v2'],
 	'xx-session-management': ['v1'],
+	'xx-text-input': ['v3'],
 }
 
 protocol_files = []
