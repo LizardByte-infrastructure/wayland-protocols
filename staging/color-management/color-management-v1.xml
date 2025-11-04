@@ -963,6 +963,9 @@
       A viewer, who is viewing the display defined by the resulting image
       description (the viewing environment included), is assumed to be fully
       adapted to the primary color volume's white point.
+
+      The closest correspondence to an image description created through this
+      interface is the Display class of profiles in ICC.
     </description>
 
     <enum name="error">
