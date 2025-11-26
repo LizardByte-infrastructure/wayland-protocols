@@ -79,6 +79,7 @@ staging_protocols = {
 
 experimental_protocols = {
 	'xx-input-method': ['v2'],
+	'xx-keyboard-filter': ['v1'],
 	'xx-session-management': ['v1'],
 	'xx-text-input': ['v3'],
 }
