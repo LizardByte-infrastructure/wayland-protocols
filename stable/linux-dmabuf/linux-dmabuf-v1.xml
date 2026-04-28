@@ -61,7 +61,7 @@
       import later fails.
 
       To create a wl_buffer from one or more dmabufs, a client creates a
-      zwp_linux_dmabuf_params_v1 object with a zwp_linux_dmabuf_v1.create_params
+      zwp_linux_buffer_params_v1 object with a zwp_linux_dmabuf_v1.create_params
       request. All planes required by the intended format are added with
       the 'add' request. Finally, a 'create' or 'create_immed' request is
       issued, which has the following outcome depending on the import success.
@@ -162,7 +162,7 @@
 
     <request name="get_default_feedback" since="4">
       <description summary="get default feedback">
-        This request creates a new wp_linux_dmabuf_feedback object not bound
+        This request creates a new zwp_linux_dmabuf_feedback_v1 object not bound
         to a particular surface. This object will deliver feedback about dmabuf
         parameters to use if the client doesn't support per-surface feedback
         (see get_surface_feedback).
@@ -172,11 +172,11 @@
 
     <request name="get_surface_feedback" since="4">
       <description summary="get feedback for a surface">
-        This request creates a new wp_linux_dmabuf_feedback object for the
+        This request creates a new zwp_linux_dmabuf_feedback_v1 object for the
         specified wl_surface. This object will deliver feedback about dmabuf
         parameters to use for buffers attached to this surface.
 
-        If the surface is destroyed before the wp_linux_dmabuf_feedback object,
+        If the surface is destroyed before the zwp_linux_dmabuf_feedback_v1 object,
         the feedback object becomes inert.
       </description>
       <arg name="id" type="new_id" interface="zwp_linux_dmabuf_feedback_v1"/>
@@ -206,7 +206,7 @@
 
     <enum name="error">
       <entry name="already_used" value="0"
-             summary="the dmabuf_batch object has already been used to create a wl_buffer"/>
+             summary="the zwp_linux_buffer_params_v1 object has already been used to create a wl_buffer"/>
       <entry name="plane_idx" value="1"
              summary="plane index out of bounds"/>
       <entry name="plane_set" value="2"
@@ -428,16 +428,16 @@
     <request name="destroy" type="destructor">
       <description summary="destroy the feedback object">
         Using this request a client can tell the server that it is not going to
-        use the wp_linux_dmabuf_feedback object anymore.
+        use the zwp_linux_dmabuf_feedback_v1 object anymore.
       </description>
     </request>
 
     <event name="done">
       <description summary="all feedback has been sent">
-        This event is sent after all parameters of a wp_linux_dmabuf_feedback
+        This event is sent after all parameters of a zwp_linux_dmabuf_feedback_v1
         object have been sent.
 
-        This allows changes to the wp_linux_dmabuf_feedback parameters to be
+        This allows changes to the zwp_linux_dmabuf_feedback_v1 parameters to be
         seen as atomic, even if they happen via multiple events.
       </description>
     </event>
@@ -468,14 +468,14 @@
         This event advertises the main device that the server prefers to use
         when direct scan-out to the target device isn't possible. The
         advertised main device may be different for each
-        wp_linux_dmabuf_feedback object, and may change over time.
+        zwp_linux_dmabuf_feedback_v1 object, and may change over time.
 
         There is exactly one main device. The compositor must send at least
         one preference tranche with tranche_target_device equal to main_device.
 
         Clients need to create buffers that the main device can import and
         read from, otherwise creating the dmabuf wl_buffer will fail (see the
-        wp_linux_buffer_params.create and create_immed requests for details).
+        zwp_linux_buffer_params_v1.create and create_immed requests for details).
         The main device will also likely be kept active by the compositor,
         so clients can use it instead of waking up another device for power
         savings.
@@ -520,7 +520,7 @@
         or through a potentially more expensive fallback path. If the buffer
         can't be directly imported from the main device then clients must be
         prepared for the compositor changing the tranche priority or making
-        wl_buffer creation fail (see the wp_linux_buffer_params.create and
+        wl_buffer creation fail (see the zwp_linux_buffer_params_v1.create and
         create_immed requests for details).
 
         If the device is a DRM node, the DRM node type (primary vs. render) is
@@ -558,7 +558,7 @@
         This event is tied to a preference tranche, see the tranche_done event.
 
         For the definition of the format and modifier codes, see the
-        wp_linux_buffer_params.create request.
+        zwp_linux_buffer_params_v1.create request.
       </description>
       <arg name="indices" type="array" summary="array of 16-bit indexes"/>
     </event>
