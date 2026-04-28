@@ -105,7 +105,7 @@
         received.
       </description>
       <arg name="params_id" type="new_id" interface="zwp_linux_buffer_params_v1"
-           summary="the new temporary"/>
+           summary="id for the newly created zwp_linux_buffer_params_v1"/>
     </request>
 
     <event name="format" deprecated-since="4">
@@ -346,7 +346,7 @@
         zwp_linux_buffer_params_v1 object.
       </description>
       <arg name="buffer" type="new_id" interface="wl_buffer"
-           summary="the newly created wl_buffer"/>
+           summary="id for the the newly created wl_buffer"/>
     </event>
 
     <event name="failed">
