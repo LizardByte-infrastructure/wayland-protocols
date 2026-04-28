@@ -534,7 +534,7 @@
     </event>
 
     <event name="tranche_formats">
-      <description summary="supported buffer format modifier">
+      <description summary="supported buffer format modifiers">
         This event advertises the format + modifier combinations that the
         compositor supports.
 
