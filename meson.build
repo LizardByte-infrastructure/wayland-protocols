@@ -89,6 +89,12 @@ staging_protocols = {
 experimental_protocols = {
 	'xx-cutouts': {'v1': []},
 	'xx-hotkey': {'v1': []},
+	'xx-image-capture-color-management': {'v1': [
+		'staging/color-management/color-management-v1.xml',
+		'staging/ext-image-capture-source/ext-image-capture-source-v1.xml',
+		'staging/ext-image-copy-capture/ext-image-copy-capture-v1.xml',
+		'staging/ext-foreign-toplevel-list/ext-foreign-toplevel-list-v1.xml',
+	]},
 	'xx-input-method': {'v2': []},
 	'xx-keyboard-filter': {'v1': [
 		'experimental/xx-input-method/xx-input-method-v2.xml',
