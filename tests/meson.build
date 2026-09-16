@@ -100,9 +100,14 @@ foreach protocol_file : protocol_files
 	replace_command = protocol_replace_command[protocol_file]
 
 	dep_code = []
+	dep_args = []
 	if protocol_file in protocol_deps
 		foreach dep : protocol_deps[protocol_file]
 			dep_code += [protocol_code[dep]]
+			foreach dep_header : [protocol_client_header[dep], protocol_server_header[dep]]
+				dep_code += [dep_header]
+				dep_args += ['-include', dep_header.full_path()]
+			endforeach
 		endforeach
 	endif
 
@@ -128,7 +133,7 @@ foreach protocol_file : protocol_files
 			'-std=c99',
 			'-pedantic',
 			'-Wall',
-			'-Werror' ],
+			'-Werror' ] + dep_args,
 		install: false,
 	)
 	test(test_name, pedantic_test_executable)
@@ -154,7 +159,7 @@ foreach protocol_file : protocol_files
 			cpp_args: [
 				'-Wall',
 				'-Werror',
-			],
+			] + dep_args,
 			install: false,
 		)
 		test(test_name, cxx_test_executable)
