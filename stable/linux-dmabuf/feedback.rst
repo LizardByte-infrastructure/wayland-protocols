@@ -173,7 +173,7 @@ slower than direct scan-out but faster than texturing. For instance, a
 compositor could insert an intermediate tranche if it's possible to use a
 mem2mem device to convert buffers to be able to use scan-out.
 
-linux-dmabuf feedback implementation nodes for version 6
+linux-dmabuf feedback implementation notes for version 6
 ==========================================
 
 With version 6 of the protocol, most of the logic described for version 4 still

@@ -171,7 +171,7 @@ standardization.
    inactivity by its author, as determined by all of the following being true:
    * No changes have been made to the protocol by the author
    * No comments have been made to the protocol merge request by the author
-   * No mails have been sent to the mailing list persuant to the protocol by the author
+   * No mails have been sent to the mailing list pursuant to the protocol by the author
 2. A notification of intent to remove shall be given to the author in the protocol
    merge request, and the protocol shall only be removed following a one week grace period
    of continued inactivity.
